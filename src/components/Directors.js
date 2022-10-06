@@ -1,24 +1,23 @@
 import React from "react";
 import { directors } from "../data";
 
-function Directors() {
-  const directorDisplay = directors.map((director) => (
+const Directors = () => {
+  const directorList = directors.map((director) => (
     <div key={director.name}>
-      <h2>Name: {director.name}</h2>
-      Movies:
+      <h2>{director.name}</h2>
       <ul>
         {director.movies.map((movie) => (
-          <li key={movie}>{movie} </li>
+          <li key={movie}>{movie}</li>
         ))}
       </ul>
     </div>
   ));
   return (
     <div>
-      <h1>Derectors Page</h1>
-      {directorDisplay}
+      <h1>Directors Page</h1>
+      {directorList}
     </div>
   );
-}
+};
 
 export default Directors;
